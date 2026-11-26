@@ -9,10 +9,12 @@ import os
 
 FORTUNE = "You will find the bug in the last place you look: production."
 
+OUTPUT_PATH = "/output/entry.txt"
+
 
 def main() -> None:
-    os.makedirs("/output", exist_ok=True)
-    with open("/output/entry.txt", "w", encoding="utf-8", newline="") as f:
+    os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
+    with open(OUTPUT_PATH, "w", encoding="utf-8", newline="") as f:
         f.write(FORTUNE)
 
 
